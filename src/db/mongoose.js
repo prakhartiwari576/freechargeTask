@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect(
-	'mongodb+srv://freecharge:1234@cluster0.uyg5v.mongodb.net/freecharge?retryWrites=true&w=majority',
+	process.env.MONGODB_URL,
 	{
 		useUnifiedTopology : true,
 		useNewUrlParser    : true
