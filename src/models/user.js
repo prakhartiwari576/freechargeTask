@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
-const user = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     Name:Number,
     username:String,
     password:Number,
     accountnumber:String
 })
-const USER = mongoose.model('User',user)
-USER.createIndexes();
-module.exports = USER;
+
+const user = mongoose.model('User',userSchema)
+user.createIndexes();
+module.exports = user;
