@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose')
 const user = new mongoose.Schema({
     Name:Number,
@@ -6,6 +5,6 @@ const user = new mongoose.Schema({
     password:Number,
     accountnumber:String
 })
-const user = mongoose.model('User',user)
-user.createIndexes();
-module.exports = user;
+const USER = mongoose.model('User',user)
+USER.createIndexes();
+module.exports = USER;
