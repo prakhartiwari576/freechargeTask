@@ -7,9 +7,9 @@ mongoose.connect(
 		useNewUrlParser    : true
 	}
 );
-// let db = mongoose.connection;
+let db = mongoose.connection;
 
-// db.once('open', () => logger.info('Connected to the MongoDB database'));
+db.once('open', () => console.log('Connected to the MongoDB database'));
 
 module.exports = {
 	mongoose

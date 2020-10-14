@@ -3,6 +3,6 @@ const user_csv = new mongoose.Schema({
     accountnumber:String,
     CSV:Array
 })
-const user_csv = mongoose.model('user_csv',user_csv)
-user_csv.createIndexes();
-module.exports = user_csv;
+const userCsv = mongoose.model('user_csv',user_csv)
+userCsv.createIndexes();
+module.exports = userCsv;
