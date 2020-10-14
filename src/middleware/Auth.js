@@ -1,7 +1,6 @@
 const con = require('../db/mongoose')
-const con = require('../db/mongoose')
 const jwt = require('jsonwebtoken')
-const user = require('../models/user');
+
 const auth = async (req, res, next) => {
   
     const token = req.header('Authorization')
