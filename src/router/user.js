@@ -16,16 +16,23 @@ router.post('/users',async (req,res)=>{
   }
 })
 
-// router.post('/users/login',async (req,res)=>{
-//   var username = req.body.username;
-//   var password = req.body.password;
-//   try{
-//     await User.findOne({username:username});
-//     // const token = await user.generateAuthToken()
-//     res.status(201).send({user})
-//   }catch(error){
-//     res.status(400).send("not authorized")
-//   }
-// })
+router.post('/users/login',async(req,res)=>{
+  try{
+    const user = await User.findOne({
+      username:req.body.username,
+      password:req.body.password
+    })
+
+    if(user==null){
+      res.send({message:'Wrong Username or Password'})
+    }else{
+      const token = await user.generateAuthToken()
+      res.send({user})
+    }
+  }catch(e){
+    console.log(e)
+    res.status(400).send()
+  }
+})
 
 module.exports = router
